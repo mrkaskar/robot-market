@@ -2,8 +2,9 @@ import React from 'react';
 import globalStyles from 'global/Global.module.css';
 import colors from 'global/colors/colors';
 import dateFormatter from 'helpers/dateFormatter';
+import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton';
+import styles from './RobotCard.module.css';
 import { IRobot } from '../../@types/robot';
-import styles from './styles/RobotCard.module.css';
 
 function RobotCard({
   name,
@@ -25,7 +26,9 @@ function RobotCard({
               alt="robot"
               className={styles.card__robot__img}
             />
-            <div>
+            <div
+              style={{ marginLeft: '20px' }}
+            >
               <span
                 className={globalStyles.header}
                 style={{ color: text1, marginTop: '20px' }}
@@ -63,6 +66,7 @@ function RobotCard({
               {dateFormatter(createdAt)}
 
             </p>
+            <AddCardButton />
           </div>
         </div>
       </div>

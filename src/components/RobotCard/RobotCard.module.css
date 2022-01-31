@@ -15,6 +15,9 @@
 .card__upper {
     display:  flex;
 }
+.card__lower {
+    display: flex;
+}
 .price_tag{
     box-sizing: border-box;
     width: 110px;
