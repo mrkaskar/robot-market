@@ -1,0 +1,10 @@
+.rightsheet {
+  position: absolute;
+  width: 300px;
+  height: 90vh;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 15px; 
+  top: 3px;
+  transition: 0.5s;
+}
