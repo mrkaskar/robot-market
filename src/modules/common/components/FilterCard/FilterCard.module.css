@@ -1,0 +1,30 @@
+.filter_card__wrapper {
+  border-radius: 15px;
+  display: inline-flex;
+  height: 45px;
+  font-weight: 500;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 0.5px;
+}
+.filter_card__wrapper:hover {
+  cursor: pointer;
+}
+
+.checkbox {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.text {
+  display: inline-block;
+  margin-left: 8px;
+}

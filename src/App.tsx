@@ -1,19 +1,20 @@
 import * as React from 'react';
 import RobotCard from 'components/RobotCard/RobotCard';
 import colors from 'global/colors/colors';
+import { ReactComponent as Logo } from 'assets/logo.svg';
+import useSize, { Size } from 'hooks/useScreensize';
+import FilterCard from 'modules/common/components/FilterCard/FilterCard';
+import CartCount from 'modules/common/components/CartCount/CartCount';
 
 function App(): React.ReactElement {
+  const media = useSize();
   return (
     <div className="App">
-      <h1 style={{ fontFamily: 'poppins', color: colors.primary }}>Robot Market</h1>
-      <RobotCard
-        name="Earnest Yundt"
-        image="https://robohash.org/Earnest Yundt.png?size=120x120"
-        price="36.97"
-        stock={10}
-        createdAt="2021-05-27T19:06:25.487Z"
-        material="Fresh"
-      />
+      <div id="header">
+        <Logo />
+        <h1 style={{ fontFamily: 'poppins', color: colors.primary }}>Robot Market</h1>
+        <CartCount />
+      </div>
     </div>
   );
 }
