@@ -13,7 +13,7 @@ interface AsyncState {
   error: unknown
 }
 
-interface IAsync {
+export interface IAsync {
   isIdle: boolean
   isLoading: boolean
   isError: boolean
@@ -47,6 +47,6 @@ export default function useAsync(): IAsync {
     isSuccess: status === Status.RESOLVED,
     data,
     error,
-    execute,
+    execute: React.useCallback(execute, []),
   };
 }

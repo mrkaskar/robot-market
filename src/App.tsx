@@ -3,6 +3,7 @@ import useSize, { Size } from 'hooks/useScreensize';
 import styles from 'App.module.css';
 import RightSheet from 'components/RightSheet/RightSheet';
 import { SheetContext } from 'context/SheetProvider';
+import Home from 'pages/Home';
 
 function App(): React.ReactElement {
   const media = useSize();
@@ -21,6 +22,7 @@ function App(): React.ReactElement {
         paddingLeft: media === Size.MOBILE ? '20px' : '50px',
       }}
     >
+      <Home />
       <RightSheet>
         <p>This is inside the sheet</p>
       </RightSheet>
