@@ -2,13 +2,25 @@ import React from 'react';
 import { ReactComponent as Cart } from './assets/cart.svg';
 import styles from './CartCount.module.css';
 
-function CartCount(): React.ReactElement {
+interface ICartCount {
+  onClick: () => void;
+}
+
+function CartCount({ onClick }: ICartCount): React.ReactElement {
   return (
-    <div className={styles.cart}>
-      <div className={styles.cart__number_back}>
-        3
+    <div
+      aria-hidden
+      onClick={() => onClick()}
+    >
+      <div
+        className={styles.cart}
+        aria-hidden
+      >
+        <div className={styles.cart__number_back}>
+          3
+        </div>
+        <Cart />
       </div>
-      <Cart />
     </div>
   );
 }

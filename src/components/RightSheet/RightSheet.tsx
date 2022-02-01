@@ -9,13 +9,11 @@ interface IRightSheet {
 function RightSheet({
   children,
 }: IRightSheet): React.ReactElement {
-  const { sheet: { rightSheet } } = React.useContext(SheetContext);
+  const { sheet: { rightSheet }, updateSheet } = React.useContext(SheetContext);
   const sheetRef = React.useRef<HTMLDivElement>(null);
   function acceptGesture(gest: Gesture): void {
-    if (gest === Gesture.LEFT) {
-      alert('left');
-    } else if (gest === Gesture.RIGHT) {
-      alert('right');
+    if (gest === Gesture.RIGHT) {
+      if (updateSheet) { updateSheet('rightSheet', false); }
     }
   }
   React.useEffect(() => {
@@ -28,7 +26,7 @@ function RightSheet({
         cleanGesture(sheetDiv, acceptGesture);
       }
     };
-  }, []);
+  }, [sheetRef]);
 
   return (
     <div

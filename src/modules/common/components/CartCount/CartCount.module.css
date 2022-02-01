@@ -11,23 +11,23 @@
 .cart::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 50%;
+  left: 65%;
+  top: 35%;
+  border-radius: 100%;
   padding: 50%;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   background-color: rgba(0, 0, 255, 0.733);
   opacity: 0;
   transform: translate(-50%, -50%) scale(1) ;
-  transition: opacity 1s, transform 0.4s;
-  padding-right: 20px;
+  transition: opacity 0.4s, transform 0.3s;
 }
 .cart:active::after {
   opacity: 0.16;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0s;
 }
+
 .cart__number_back {
   background-color: #FF3737;
   width: 23px;
