@@ -1,14 +1,14 @@
 import React from 'react';
 import useAsync, { IAsync } from './useAsync';
 
-interface IApi {
-  apiFun: () => Promise<unknown>
+interface IApi<T> {
+  apiFun: () => Promise<T>
 }
 
-function useApi({ apiFun }: IApi): IAsync {
+function useApi<T>({ apiFun }: IApi<T>): IAsync<T> {
   const {
     execute, isIdle, isLoading, isSuccess, isError, data, error,
-  } = useAsync();
+  } = useAsync<T>();
 
   React.useEffect(() => {
     execute(apiFun());

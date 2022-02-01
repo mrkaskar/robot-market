@@ -7,35 +7,35 @@ enum Status {
   RESOLVED,
 }
 
-interface AsyncState {
+interface AsyncState<T> {
   status: Status,
-  data: unknown,
+  data: T | null
   error: unknown
 }
 
-export interface IAsync {
+export interface IAsync<T> {
   isIdle: boolean
   isLoading: boolean
   isError: boolean
   isSuccess: boolean
-  data: unknown,
+  data: T | null,
   error: unknown,
-  execute: (promise: Promise<unknown>) => void,
+  execute: (promise: Promise<T>) => void,
 }
 
-export default function useAsync(): IAsync {
-  const state: AsyncState = { status: Status.IDLE, data: null, error: null };
+export default function useAsync<T>(): IAsync<T> {
+  const state: AsyncState<T> = { status: Status.IDLE, data: null, error: null };
   const [{ status, data, error }, setState] = React.useState(state);
 
-  function setData<T>(d: T): void {
+  function setData(d: T): void {
     setState({ data: d, status: Status.RESOLVED, error: null });
   }
 
-  function setError<T>(e: T): void {
+  function setError<TT>(e: TT): void {
     setState({ data: null, status: Status.REJECTED, error: e });
   }
 
-  function execute<T>(promise: Promise<T>): void {
+  function execute(promise: Promise<T>): void {
     setState({ data: null, status: Status.PENDING, error: null });
     promise.then((d) => setData(d), (e) => setError(e));
   }

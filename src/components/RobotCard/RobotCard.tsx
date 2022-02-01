@@ -4,7 +4,7 @@ import colors from 'global/colors/colors';
 import dateFormatter from 'helpers/dateFormatter';
 import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton';
 import styles from './RobotCard.module.css';
-import { IRobot } from '../../@types/robot';
+import { IRobot } from '../../types/robot';
 
 function RobotCard({
   name,
