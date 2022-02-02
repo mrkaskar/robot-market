@@ -21,11 +21,13 @@ function RobotCard({
       <div className={styles.card}>
         <div className={styles.card__wrapper}>
           <div className={styles.card__upper}>
-            <img
-              src={image}
-              alt="robot"
-              className={styles.card__robot__img}
-            />
+            <div className={styles.img}>
+              <img
+                src={image}
+                alt="robot"
+                className={styles.card__robot__img}
+              />
+            </div>
             <div
               style={{ marginLeft: '20px' }}
             >

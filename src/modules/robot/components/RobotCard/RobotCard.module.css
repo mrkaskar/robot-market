@@ -1,17 +1,19 @@
 .robot_card {
     position: relative;
-    margin-left: 30px;
 }
 .card {
     width: 300px;
     height: 170px;
-    left: 100px;
     top: 215px;
     background: #FFFFFF;
     box-shadow: 0px 8px 16px -2px rgba(98, 98, 98, 0.1);
     border-radius: 16px;
 }
 
+.img {
+    width: 125px;
+    height: 120px;
+}
 .card__upper {
     display:  flex;
     padding-right: 20px;

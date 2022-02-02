@@ -14,6 +14,7 @@
     "react-content-loader": "^6.1.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
+    "react-window": "^1.8.6",
     "typescript": "^4.5.5",
     "web-vitals": "^1.0.1"
   },

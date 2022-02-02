@@ -17,9 +17,11 @@ function RobotGrid(): React.ReactElement {
     <div className={styles.robot_grid}>
       {
         (robotPresent || !isLoading)
-          ? robots?.map((r) => (
+          ? robots?.map((r, i) => (
             <div className={styles.robot}>
-              <RobotCard {...r} />
+              {(i === 0 || i === 1)
+                ? <RobotLoading />
+                : <RobotCard {...r} />}
             </div>
           ))
           : [1, 2, 3, 4, 5, 6].map(() => (
