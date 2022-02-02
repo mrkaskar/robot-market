@@ -1,5 +1,5 @@
 import Header from 'components/Header/Header';
-import RobotGrid from 'modules/robot/components/RobotGrid';
+import RobotGrid from 'modules/robot/components/RobotGrid/RobotGrid';
 import React from 'react';
 import styles from './Home.module.css';
 

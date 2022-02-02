@@ -1,0 +1,10 @@
+.error {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.error__button{
+ border: none;
+ padding: 5px 10px 5px 10px;
+ border-radius: 5px;
+}

@@ -5,10 +5,10 @@ interface IApi<T> {
   apiFun: () => Promise<T>
 }
 
-function useApi<T>({ apiFun }: IApi<T>): IAsync<T> {
+function useApi<T, TT>({ apiFun }: IApi<T>): IAsync<T, TT> {
   const {
     execute, isIdle, isLoading, isSuccess, isError, data, error,
-  } = useAsync<T>();
+  } = useAsync<T, TT>();
 
   React.useEffect(() => {
     execute(apiFun());

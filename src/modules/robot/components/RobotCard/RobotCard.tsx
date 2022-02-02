@@ -3,8 +3,8 @@ import globalStyles from 'global/Global.module.css';
 import colors from 'global/colors/colors';
 import dateFormatter from 'helpers/dateFormatter';
 import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton';
+import { IRobot } from 'types/robot';
 import styles from './RobotCard.module.css';
-import { IRobot } from '../../types/robot';
 
 function RobotCard({
   name,

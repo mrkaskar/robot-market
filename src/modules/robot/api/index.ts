@@ -10,6 +10,6 @@ export default async function getAllRobots():Promise<IRobot[]> {
       return data.data;
     }
 
-    return Promise.reject(data);
+    return Promise.reject(new Error('Could not load robot, pls refresh and try again!'));
   });
 }

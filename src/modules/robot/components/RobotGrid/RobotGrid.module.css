@@ -1,8 +1,9 @@
 .robot_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  width: 70%;
 }
 
 .robot {
-  background-color: pink;
+  margin-bottom: 80px;
 }

@@ -14,6 +14,7 @@
 
 .card__upper {
     display:  flex;
+    padding-right: 20px;
 }
 .card__lower {
     display: flex;
