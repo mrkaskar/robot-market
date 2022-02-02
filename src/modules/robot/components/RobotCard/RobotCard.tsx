@@ -4,7 +4,10 @@ import colors from 'global/colors/colors';
 import dateFormatter from 'helpers/dateFormatter';
 import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton';
 import { IRobot } from 'types/robot';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styles from './RobotCard.module.css';
+
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function RobotCard({
   name,
@@ -22,9 +25,12 @@ function RobotCard({
         <div className={styles.card__wrapper}>
           <div className={styles.card__upper}>
             <div className={styles.img}>
-              <img
+              <LazyLoadImage
                 src={image}
                 alt="robot"
+                effect="blur"
+                width="120px"
+                height="120px"
                 className={styles.card__robot__img}
               />
             </div>
