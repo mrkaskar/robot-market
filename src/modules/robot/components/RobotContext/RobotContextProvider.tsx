@@ -9,7 +9,8 @@ export interface IRobotData {
   isLoading: boolean;
   isError: boolean;
   robots: { [key: string]: IRobot[] };
-  error: { message: string } | null
+  error: { message: string } | null;
+  robotTypes: string[]
 }
 
 export const RobotContext = React.createContext<IRobotData | undefined>(undefined);
@@ -43,7 +44,11 @@ function RobotContextProvider({ children }: { children: React.ReactNode }): Reac
 
   const contextValue = React.useMemo(() => (
     {
-      isLoading, isError, robots, error,
+      isLoading,
+      isError,
+      robots,
+      error,
+      robotTypes: ['All', ...Object.keys(robots)],
     }
   ), [error, isError, isLoading, robots]);
 

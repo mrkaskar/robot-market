@@ -7,6 +7,7 @@ function Home(): React.ReactElement {
   return (
     <div className={styles.home}>
       <Header />
+      {/* <RobotFilters /> */}
       <RobotGrid />
     </div>
   );

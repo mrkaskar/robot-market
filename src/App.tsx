@@ -5,12 +5,15 @@ import RightSheet from 'components/RightSheet/RightSheet';
 import { SheetContext } from 'context/SheetProvider';
 import Home from 'pages/Home';
 import RobotContextProvider from 'modules/robot/components/RobotContext/RobotContextProvider';
+import Cart from 'modules/cart/Cart';
+import CartCount from 'modules/common/components/CartCount/CartCount';
 
 function App(): React.ReactElement {
   const media = useSize();
   const { sheet, updateSheet } = React.useContext(SheetContext);
+  const isMobile = media === Size.MOBILE;
   const toggleRightSheet = (): void => {
-    if (updateSheet && media === Size.MOBILE) updateSheet('rightSheet');
+    if (updateSheet && isMobile) updateSheet('rightSheet');
   };
   return (
     <div
@@ -20,14 +23,23 @@ function App(): React.ReactElement {
         if (sheet.rightSheet) toggleRightSheet();
       }}
       style={{
-        paddingLeft: media === Size.MOBILE ? '20px' : '50px',
+        paddingLeft: isMobile ? '20px' : '50px',
       }}
     >
       <RobotContextProvider>
         <Home />
         <RightSheet>
-          <p>This is inside the sheet</p>
+          <Cart />
         </RightSheet>
+
+        {
+          isMobile
+          && (
+            <div className={styles.floating_cart}>
+              <CartCount count={3} onClick={toggleRightSheet} />
+            </div>
+          )
+        }
 
       </RobotContextProvider>
     </div>
