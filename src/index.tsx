@@ -5,10 +5,9 @@ import App from 'App';
 import SheetProvider from 'context/SheetProvider';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SheetProvider>
-      <App />
-    </SheetProvider>
-  </React.StrictMode>,
+
+  <SheetProvider>
+    <App />
+  </SheetProvider>,
   document.getElementById('root'),
 );

@@ -31,6 +31,7 @@ function RobotCard({
                 effect="blur"
                 width="120px"
                 height="120px"
+                delayTime={0}
                 className={styles.card__robot__img}
               />
             </div>

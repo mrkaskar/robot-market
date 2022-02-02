@@ -4,6 +4,7 @@ import styles from 'App.module.css';
 import RightSheet from 'components/RightSheet/RightSheet';
 import { SheetContext } from 'context/SheetProvider';
 import Home from 'pages/Home';
+import RobotContextProvider from 'modules/robot/components/RobotContext/RobotContextProvider';
 
 function App(): React.ReactElement {
   const media = useSize();
@@ -22,10 +23,13 @@ function App(): React.ReactElement {
         paddingLeft: media === Size.MOBILE ? '20px' : '50px',
       }}
     >
-      <Home />
-      <RightSheet>
-        <p>This is inside the sheet</p>
-      </RightSheet>
+      <RobotContextProvider>
+        <Home />
+        <RightSheet>
+          <p>This is inside the sheet</p>
+        </RightSheet>
+
+      </RobotContextProvider>
     </div>
   );
 }
