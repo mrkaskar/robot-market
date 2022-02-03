@@ -6,7 +6,6 @@ import { SheetContext } from 'context/SheetProvider';
 import Home from 'pages/Home';
 import RobotContextProvider from 'modules/robot/components/RobotContext/RobotContextProvider';
 import CartCount from 'modules/common/components/CartCount/CartCount';
-import NumberCounter from 'modules/common/components/NumberCounter/NumberCounter';
 import CartWrapper from 'modules/cart/components/CartWrapper/CartWrapper';
 
 function App(): React.ReactElement {
@@ -37,7 +36,7 @@ function App(): React.ReactElement {
           isMobile
           && (
             <div className={styles.floating_cart}>
-              <CartCount count={3} onClick={toggleRightSheet} />
+              <CartCount onClick={toggleRightSheet} />
             </div>
           )
         }

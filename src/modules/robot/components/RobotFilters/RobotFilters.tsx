@@ -5,6 +5,7 @@ import useMobileSize from 'hooks/useMobileSize';
 import useFilter from 'modules/robot/hooks/useFilter';
 import RobotFilterCard from '../RobotFIlterCard/RobotFilterCard';
 import { ReactComponent as Filter } from './assets/filter.svg';
+import RobotFilterLoading from '../RobotFIlterCard/RobotFilterLoading';
 
 function RobotFilters(): React.ReactElement {
   const robotData = useRobot();
@@ -47,26 +48,36 @@ function RobotFilters(): React.ReactElement {
           <div
             className={styles.filter_area}
             style={{
-              width: `${isMobile ? '80%' : '61%'}`,
+              width: `${isMobile ? '80%' : '70%'}`,
+              height: `${isMobile ? '' : '80px'}`,
               position: `${isMobile ? 'fixed' : 'static'}`,
+              backgroundColor: `${isMobile ? 'rgb(255, 255, 255)' : ''}`,
+              boxShadow: `${isMobile ? '0px 16px 32px -2px rgba(140, 166, 250, 0.1)' : ''}`,
             }}
           >
             {
-              robotTypes.map((type) => (
-                <div key={type}>
-                  <RobotFilterCard
-                    label={type}
-                    onClick={() => {
-                      if (filters.includes(type)) {
-                        removeFilter(type);
-                      } else {
-                        addFilter(type);
-                      }
-                    }}
-                    active={filters.includes(type)}
-                  />
-                </div>
-              ))
+              robotTypes.length > 2
+                ? robotTypes.map((type) => (
+                  <div key={type}>
+                    <RobotFilterCard
+                      label={type}
+                      onClick={() => {
+                        if (filters.includes(type)) {
+                          removeFilter(type);
+                        } else {
+                          addFilter(type);
+                        }
+                      }}
+                      active={filters.includes(type)}
+                    />
+                  </div>
+                ))
+                : Array.from(Array(20).keys())
+                  .map((e) => (
+                    <div key={e}>
+                      <RobotFilterLoading />
+                    </div>
+                  ))
             }
           </div>
         )

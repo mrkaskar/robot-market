@@ -5,24 +5,42 @@ interface INumberCounter {
   number: number
   onIncrease: () => void
   onDecrease: () => void
+  increaseActive: boolean | undefined
+  decreaseActive: boolean
 }
 
-function NumberCounter({ number, onIncrease, onDecrease }: INumberCounter): React.ReactElement {
+function NumberCounter({
+  number,
+  onIncrease,
+  onDecrease,
+  increaseActive,
+  decreaseActive,
+}: INumberCounter): React.ReactElement {
   return (
     <div className={styles.number_wrapper}>
       <div
-        className={styles.increase}
+        className={styles.decrease}
+        style={{
+          background: `${decreaseActive
+            ? 'linear-gradient(137.39deg, #34AAFF -15.07%, #97D3FF 145.21%)'
+            : 'linear-gradient(137.39deg, #AAAAAA -15.07%, #CACACA 145.21%)'}`,
+        }}
         aria-hidden
-        onClick={onIncrease}
+        onClick={onDecrease}
       >
         -
 
       </div>
       <div className={styles.number}>{number}</div>
       <div
-        className={styles.decrease}
+        className={styles.increase}
+        style={{
+          background: `${increaseActive
+            ? 'linear-gradient(137.39deg, #34AAFF -15.07%, #97D3FF 145.21%)'
+            : 'linear-gradient(137.39deg, #AAAAAA -15.07%, #CACACA 145.21%)'}`,
+        }}
         aria-hidden
-        onClick={onDecrease}
+        onClick={onIncrease}
       >
         +
 

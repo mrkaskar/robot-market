@@ -1,17 +1,23 @@
 import React from 'react';
 import styles from 'modules/cart/components/CartItem/CartItem.module.css';
 import NumberCounter from 'modules/common/components/NumberCounter/NumberCounter';
+import useCart from 'modules/cart/hooks/useCart';
+import useRobot from 'modules/robot/hooks/useRobot';
+import { ReactComponent as Close } from './assets/close.svg';
 
 interface ICartItem {
   name: string
   count: number
   price: string
   img: string
+  onClose: () => void
 }
 
 function CartItem({
-  name, count, price, img,
+  name, count, price, img, onClose,
 }: ICartItem): React.ReactElement {
+  const { increaseItem, decreaseItem, carts } = useCart();
+  const robots = useRobot();
   return (
     <div className={styles.cart__segments}>
       <div className={styles.cart__segments_one}>
@@ -27,12 +33,14 @@ function CartItem({
               per unit
             </div>
             <div>
-              x
-              <span style={{ marginRight: '10px' }} />
+
+              <span />
               <NumberCounter
                 number={count}
-                onIncrease={() => undefined}
-                onDecrease={() => undefined}
+                onIncrease={() => increaseItem(name)}
+                onDecrease={() => decreaseItem(name)}
+                decreaseActive={count !== 1}
+                increaseActive={robots && (robots.robotStock[name] !== carts[name].count)}
               />
 
             </div>
@@ -40,8 +48,20 @@ function CartItem({
 
         </div>
       </div>
-      <div className={styles.subtotal}>
-        ฿ 100
+      <div>
+        <div
+          aria-hidden
+          className={styles.close}
+          onClick={onClose}
+        >
+          <Close className={styles.close_icon} />
+        </div>
+        <div className={styles.subtotal}>
+          ฿
+          {' '}
+          {(+price * count).toFixed(2)}
+        </div>
+
       </div>
     </div>
   );

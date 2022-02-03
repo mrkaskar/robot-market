@@ -7,7 +7,7 @@ import colors from 'global/colors/colors';
 import CartItem from '../CartItem/CartItem';
 
 function Cart(): React.ReactElement {
-  const { carts } = useCart();
+  const { carts, removeFromCart, getTotal } = useCart();
   const { isMobile } = useMobileSize();
   return (
     <div
@@ -20,9 +20,16 @@ function Cart(): React.ReactElement {
       <div
         className={styles.cart__header}
       >
-        <span style={{ marginRight: '10px' }}>Your robots in Cart</span>
+        <span style={{
+          marginRight: '10px',
+          marginBottom: `${isMobile && '20px'}`,
+        }}
+        >
+          Your robots in Cart
+
+        </span>
         {!isMobile
-          && <CartCount count={0} onClick={() => undefined} />}
+          && <CartCount onClick={() => undefined} />}
       </div>
       {
         Object.keys(carts).length < 1
@@ -46,16 +53,45 @@ function Cart(): React.ReactElement {
               </div>
               {
                 Object.keys(carts).map((item) => (
-                  <CartItem
-                    name={item}
-                    img={carts[item].img}
-                    price={carts[item].price}
-                    count={carts[item].count}
-                  />
+                  <div key={item}>
+                    <CartItem
+                      name={item}
+                      img={carts[item].img}
+                      price={carts[item].price}
+                      count={carts[item].count}
+                      onClose={() => removeFromCart(item)}
+                    />
+                  </div>
                 ))
               }
+              <div className={styles.summary}>
+                <div className={styles.summary__items}>
+                  {Object.keys(carts).length}
+                  {' '}
+                  items
+                </div>
+                <div className={styles.summary__total}>Total</div>
+                <div className={styles.summary__total_count}>
+                  ฿
+                  {' '}
+                  {getTotal()}
+                </div>
+              </div>
             </div>
           )
+      }
+      {
+        Object.keys(carts).length > 0
+        && (
+          <div
+            className={styles.checkout}
+            style={{
+              width: `${isMobile && '260px'}`,
+            }}
+          >
+            Checkout
+          </div>
+        )
       }
     </div>
   );

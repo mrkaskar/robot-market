@@ -1,13 +1,14 @@
+import useCart from 'modules/cart/hooks/useCart';
 import React from 'react';
 import { ReactComponent as Cart } from './assets/cart.svg';
 import styles from './CartCount.module.css';
 
 interface ICartCount {
-  count: number;
   onClick: () => void;
 }
 
-function CartCount({ count, onClick }: ICartCount): React.ReactElement {
+function CartCount({ onClick }: ICartCount): React.ReactElement {
+  const { carts } = useCart();
   return (
     <div
       aria-hidden
@@ -18,7 +19,7 @@ function CartCount({ count, onClick }: ICartCount): React.ReactElement {
         aria-hidden
       >
         <div className={styles.cart__number_back}>
-          {count}
+          {Object.keys(carts).length}
         </div>
         <Cart />
       </div>

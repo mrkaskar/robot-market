@@ -1,4 +1,5 @@
 .filter_card__wrapper {
+  box-sizing: border-box;
   border-radius: 10px;
   display: inline-flex;
   height: 35px;

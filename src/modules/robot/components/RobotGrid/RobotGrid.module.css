@@ -1,6 +1,6 @@
 .robot_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 260px);
+  grid-template-columns: repeat(auto-fill, 270px);
   grid-gap: 30px;
   width: 90%;
 }

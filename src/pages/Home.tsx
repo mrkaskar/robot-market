@@ -13,6 +13,11 @@ function Home(): React.ReactElement {
       <Header />
       <RobotFilters />
       <RobotGrid />
+      {/* for padding bottom */}
+      <div style={{
+        height: '300px',
+      }}
+      />
       {
         !isMobile
         && <DesktopCart />

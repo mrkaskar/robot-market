@@ -6,6 +6,7 @@ import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton
 import { IRobot } from 'types/robot';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import useCart from 'modules/cart/hooks/useCart';
+import useRobot from 'modules/robot/hooks/useRobot';
 import styles from './RobotCard.module.css';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -19,11 +20,31 @@ function RobotCard({
   material,
 }: IRobot): React.ReactElement {
   const { text1, text2 } = colors;
-  const { addToCart } = useCart();
+  const robots = useRobot();
+
+  const [currentStock, setCurrentStock] = React.useState(stock);
+
+  const { addToCart, carts } = useCart();
+  const robotsInCart = Object.keys(carts);
+
+  React.useEffect(() => {
+    if (robotsInCart.includes(name) && robots) {
+      const availableStock = robots.robotStock[name] - carts[name].count;
+      if (availableStock > -1) { setCurrentStock(availableStock); }
+    } else if (robots) setCurrentStock(robots.robotStock[name]);
+  }, [carts, name, robots, robotsInCart]);
 
   return (
     <div className={styles.robot_card}>
-      <div className={styles.card}>
+      <div
+        className={styles.card}
+        style={{
+          boxShadow: `${robotsInCart.includes(name)
+
+            ? '0px 8px 16px -2px #B7E1FF'
+            : '0px 8px 16px -2px rgba(98, 98, 98, 0.1)'}`,
+        }}
+      >
         <div className={styles.card__wrapper}>
           <div className={styles.card__upper}>
             <div className={styles.img}>
@@ -55,12 +76,12 @@ function RobotCard({
               </span>
               <br />
               <span
-                className={globalStyles.normal}
+                className={globalStyles.small}
                 style={{ color: text2, marginTop: '6px' }}
               >
                 In Stock:
                 {' '}
-                {stock}
+                {currentStock}
               </span>
             </div>
           </div>
@@ -79,6 +100,7 @@ function RobotCard({
             </p>
             <AddCardButton
               onClick={() => addToCart({ name, img: image, price })}
+              active={currentStock !== 0}
             />
           </div>
         </div>
@@ -100,4 +122,4 @@ function RobotCard({
   );
 }
 
-export default RobotCard;
+export default React.memo(RobotCard);

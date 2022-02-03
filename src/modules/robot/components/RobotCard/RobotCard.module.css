@@ -1,5 +1,11 @@
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
 .robot_card {
     position: relative;
+    animation: fadeIn 0.7s;
 }
 .card {
     width: 275px;

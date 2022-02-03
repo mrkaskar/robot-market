@@ -39,5 +39,20 @@
  
  .subtotal {
    font-weight: bold;
-   margin-top: 42px;
+   margin-top: 40px;
+  width: 100px;
+  text-align: right; 
+ }
+ 
+ .close {
+   position: relative;
+
+ }
+ .close:hover {
+   cursor: pointer;
+ }
+ .close_icon {
+   position: absolute;
+   right: -5px;
+   transform: scale(0.7);
  }

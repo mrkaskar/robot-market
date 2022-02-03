@@ -1,11 +1,14 @@
 .cart__area {
-  min-height: 450px;
+  min-height: 550px;
 
 }
 .cart__header{
   display: flex;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
+  color: #3a3a3a;
+  align-items: center;
+
 }
 
 .no_item {
@@ -23,3 +26,41 @@
   .cart__segments_one {
     flex: 1;
   }
+  
+  .summary {
+    display: flex;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .summary__items, .summary__total, .summary__total_count {
+    flex: 1;
+  }
+  
+  .summary__total {
+    text-align: center;
+  }
+  
+  .summary__total_count {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .checkout {
+  width: 290px;
+  height: 34px;
+  margin: 0 auto;
+  background: #5CFFC4;
+  box-shadow: 0px 4px 8px rgba(92, 255, 196, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  }
+
+    .checkout:hover{
+      opacity: 0.9;
+      cursor: pointer;
+    }

@@ -2,21 +2,28 @@ import colors from 'global/colors/colors';
 import React from 'react';
 import styles from './AddCartButton.module.css';
 import { ReactComponent as AddCart } from './assets/addcart.svg';
+import { ReactComponent as DisabledCart } from './assets/disabled_addcart.svg';
 
 interface IAddCartButton {
   onClick: () => void
+  active: boolean
 }
 
-function AddCardButton({ onClick }: IAddCartButton): React.ReactElement {
-  const { primary } = colors;
+function AddCardButton({ onClick, active }: IAddCartButton): React.ReactElement {
+  const { primary, inactive } = colors;
   return (
     <button
       onClick={onClick}
       type="button"
-      className={`${styles.cart_button} ${styles.active_button}`}
+      className={`${styles.cart_button} ${active ? styles.active_button : ''}`}
     >
-      <AddCart className={styles.add_cart_icon} />
-      <span style={{ color: primary }}>
+      {
+        active
+          ? <AddCart className={styles.add_cart_icon} />
+          : <DisabledCart className={styles.add_cart_icon} />
+
+      }
+      <span style={{ color: active ? primary : inactive }}>
         Add to Cart
       </span>
     </button>

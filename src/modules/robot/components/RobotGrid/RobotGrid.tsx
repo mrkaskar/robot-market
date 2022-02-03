@@ -34,7 +34,6 @@ function RobotGrid(): React.ReactElement {
                 <RobotLoading />
               </div>
             ))
-
       }
     </div>
   );

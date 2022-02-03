@@ -6,7 +6,6 @@
 .increase, .decrease {
   width: 14px;
   height: 14px;
-  background: linear-gradient(137.39deg, #34AAFF -15.07%, #97D3FF 145.21%);
   border-radius: 3px;
   color: white;
   display: flex;
