@@ -10,11 +10,22 @@ function useFilter(): IFilterFunction {
   const [filters, setFilters] = useAtom(filterState);
 
   const addFilter = (type: string): void => {
-    setFilters([...filters, type]);
+    let filtersToUpdate = [...filters];
+    if (type !== 'All') {
+      filtersToUpdate = filtersToUpdate.filter((t) => t !== 'All');
+      filtersToUpdate.push(type);
+    } else {
+      filtersToUpdate = ['All'];
+    }
+    setFilters(filtersToUpdate);
   };
 
   const removeFilter = (type: string): void => {
-    setFilters(filters.filter((f) => f !== type));
+    if (filters.length === 1) {
+      setFilters(['All']);
+      return;
+    }
+    if (type !== 'All') { setFilters(filters.filter((f) => f !== type)); }
   };
 
   return { addFilter, removeFilter, filters };

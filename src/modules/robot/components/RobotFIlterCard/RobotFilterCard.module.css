@@ -1,8 +1,9 @@
 .filter_card__wrapper {
-  border-radius: 15px;
+  border-radius: 10px;
   display: inline-flex;
-  height: 45px;
-  font-weight: 500;
+  height: 35px;
+  font-weight: normal;
+  font-size: 12px;
   color: white;
   justify-content: center;
   align-items: center;
@@ -16,8 +17,8 @@
 
 .checkbox {
   background-color: white;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

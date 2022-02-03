@@ -1,22 +1,30 @@
 import useRobot from 'modules/robot/hooks/useRobot';
 import React from 'react';
 import styles from 'modules/robot/components/RobotFilters/RobotFilters.module.css';
-import useScreensize, { Size } from 'hooks/useScreensize';
+import useMobileSize from 'hooks/useMobileSize';
+import useFilter from 'modules/robot/hooks/useFilter';
 import RobotFilterCard from '../RobotFIlterCard/RobotFilterCard';
+import { ReactComponent as Filter } from './assets/filter.svg';
 
 function RobotFilters(): React.ReactElement {
   const robotData = useRobot();
   const [robotTypes, setRobotTypes] = React.useState<string[]>([]);
-  const size = useScreensize();
-  const isMobile = size === Size.MOBILE;
+  const { isMobile } = useMobileSize();
 
-  const [showFilter, setShowFilter] = React.useState(!isMobile);
+  const [showFilter, setShowFilter] = React.useState(true);
+  const { filters, addFilter, removeFilter } = useFilter();
 
   React.useEffect(() => {
     if (robotData) {
       setRobotTypes(robotData.robotTypes);
     }
   }, [robotData]);
+
+  React.useLayoutEffect(() => {
+    if (isMobile) {
+      setShowFilter(false);
+    }
+  }, [isMobile]);
 
   return (
     <div>
@@ -28,7 +36,7 @@ function RobotFilters(): React.ReactElement {
             className={styles.filter_button}
             onClick={() => setShowFilter(!showFilter)}
           >
-            Filters
+            <Filter className={styles.filter_icon} />
           </span>
         )
       }
@@ -39,17 +47,25 @@ function RobotFilters(): React.ReactElement {
           <div
             className={styles.filter_area}
             style={{
-              width: `${isMobile ? '87%' : '61%'}`,
-              position: `${isMobile ? 'absolute' : 'static'}`,
+              width: `${isMobile ? '80%' : '61%'}`,
+              position: `${isMobile ? 'fixed' : 'static'}`,
             }}
           >
             {
               robotTypes.map((type) => (
-                <RobotFilterCard
-                  label={type}
-                  onClick={() => undefined}
-                  active={type === 'All'}
-                />
+                <div key={type}>
+                  <RobotFilterCard
+                    label={type}
+                    onClick={() => {
+                      if (filters.includes(type)) {
+                        removeFilter(type);
+                      } else {
+                        addFilter(type);
+                      }
+                    }}
+                    active={filters.includes(type)}
+                  />
+                </div>
               ))
             }
           </div>

@@ -4,6 +4,6 @@
 .floating_cart {
   position: fixed;  
   z-index: 9999;
-  bottom: 10px;
+  bottom: 40px;
   left:10px;
 }

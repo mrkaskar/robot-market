@@ -1,8 +1,8 @@
 .robot_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
+  grid-template-columns: repeat(auto-fill, 260px);
   grid-gap: 30px;
-  width: 70%;
+  width: 90%;
 }
 
 .robot {

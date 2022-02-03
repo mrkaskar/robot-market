@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/react-window": "^1.8.5",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^7.32.0",

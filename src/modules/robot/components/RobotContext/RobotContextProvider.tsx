@@ -3,12 +3,12 @@ import getAllRobots from 'modules/robot/api';
 import React from 'react';
 import { IRobot } from 'types/robot';
 
-type IFormattedRobot = { [key: string]: IRobot[] }
+export interface IFormattedRobot { [key: string]: IRobot[] }
 
 export interface IRobotData {
   isLoading: boolean;
   isError: boolean;
-  robots: { [key: string]: IRobot[] };
+  robots: IFormattedRobot;
   error: { message: string } | null;
   robotTypes: string[]
 }

@@ -6,7 +6,7 @@ export enum Size {
 }
 
 export default function useScreensize(): Size {
-  const [media, setMedia] = React.useState(Size.MOBILE);
+  const [media, setMedia] = React.useState(Size.DESKTOP);
   React.useEffect(() => {
     function checkMedia(): void {
       const query = window.matchMedia('(max-width: 600px)');
