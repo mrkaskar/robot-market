@@ -4,7 +4,7 @@ import styles from 'modules/robot/components/RobotGrid/RobotGrid.module.css';
 import Error from 'components/Error/Error';
 import useDisplayRobot from 'modules/robot/hooks/useDisplayRobot';
 import useMobileSize from 'hooks/useMobileSize';
-import RobotLoading from '../RobotLoading/RobotLoading';
+import RobotLoading from 'modules/robot/components/RobotLoading/RobotLoading';
 
 function RobotGrid(): React.ReactElement {
   const { displayRobots, error, isLoading } = useDisplayRobot();

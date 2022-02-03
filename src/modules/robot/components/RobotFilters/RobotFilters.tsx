@@ -3,9 +3,9 @@ import React from 'react';
 import styles from 'modules/robot/components/RobotFilters/RobotFilters.module.css';
 import useMobileSize from 'hooks/useMobileSize';
 import useFilter from 'modules/robot/hooks/useFilter';
-import RobotFilterCard from '../RobotFIlterCard/RobotFilterCard';
+import RobotFilterCard from 'modules/robot/components/RobotFIlterCard/RobotFilterCard';
+import RobotFilterLoading from 'modules/robot/components/RobotFIlterCard/RobotFilterLoading';
 import { ReactComponent as Filter } from './assets/filter.svg';
-import RobotFilterLoading from '../RobotFIlterCard/RobotFilterLoading';
 
 function RobotFilters(): React.ReactElement {
   const robotData = useRobot();

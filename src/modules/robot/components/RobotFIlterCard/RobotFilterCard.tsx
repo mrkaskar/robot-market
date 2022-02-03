@@ -1,7 +1,7 @@
 import colors from 'global/colors/colors';
 import React from 'react';
-import styles from './RobotFilterCard.module.css';
-import { ReactComponent as Check } from './assets/check.svg';
+import styles from 'modules/robot/components/RobotFIlterCard/RobotFilterCard.module.css';
+import { ReactComponent as Check } from 'modules/robot/components/RobotFIlterCard/assets/check.svg';
 
 interface IRobotFilterCard {
   active?: boolean

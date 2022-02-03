@@ -7,7 +7,8 @@ import { IRobot } from 'types/robot';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import useCart from 'modules/cart/hooks/useCart';
 import useRobot from 'modules/robot/hooks/useRobot';
-import styles from './RobotCard.module.css';
+import formatNumber from 'helpers/numberFormatter';
+import styles from 'modules/robot/components/RobotCard/RobotCard.module.css';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -114,7 +115,7 @@ function RobotCard({
       >
         ฿
         {' '}
-        {price}
+        {formatNumber(+price)}
       </div>
 
       <div />

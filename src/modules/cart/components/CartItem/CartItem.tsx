@@ -3,7 +3,8 @@ import styles from 'modules/cart/components/CartItem/CartItem.module.css';
 import NumberCounter from 'modules/common/components/NumberCounter/NumberCounter';
 import useCart from 'modules/cart/hooks/useCart';
 import useRobot from 'modules/robot/hooks/useRobot';
-import { ReactComponent as Close } from './assets/close.svg';
+import formatNumber from 'helpers/numberFormatter';
+import { ReactComponent as Close } from 'modules/cart/components/CartItem/assets/close.svg';
 
 interface ICartItem {
   name: string
@@ -59,7 +60,8 @@ function CartItem({
         <div className={styles.subtotal}>
           ฿
           {' '}
-          {(+price * count).toFixed(2)}
+          {formatNumber(+price * count)}
+
         </div>
 
       </div>

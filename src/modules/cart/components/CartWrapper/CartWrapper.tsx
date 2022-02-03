@@ -4,7 +4,8 @@ import useCart from 'modules/cart/hooks/useCart';
 import CartCount from 'modules/common/components/CartCount/CartCount';
 import useMobileSize from 'hooks/useMobileSize';
 import colors from 'global/colors/colors';
-import CartItem from '../CartItem/CartItem';
+import formatNumber from 'helpers/numberFormatter';
+import CartItem from 'modules/cart/components/CartItem/CartItem';
 
 function Cart(): React.ReactElement {
   const { carts, removeFromCart, getTotal } = useCart();
@@ -22,7 +23,7 @@ function Cart(): React.ReactElement {
       >
         <span style={{
           marginRight: '10px',
-          marginBottom: `${isMobile && '5px'}`,
+          marginBottom: `${isMobile ? '5px' : '10px'}`,
         }}
         >
           Your robots in Cart
@@ -74,7 +75,7 @@ function Cart(): React.ReactElement {
                 <div className={styles.summary__total_count}>
                   ฿
                   {' '}
-                  {getTotal()}
+                  {formatNumber(getTotal())}
                 </div>
               </div>
             </div>

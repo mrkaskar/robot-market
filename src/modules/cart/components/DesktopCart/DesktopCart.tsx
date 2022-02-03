@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'modules/cart/components/DesktopCart/DesktopCart.module.css';
-import CartWrapper from '../CartWrapper/CartWrapper';
+import CartWrapper from 'modules/cart/components/CartWrapper/CartWrapper';
 
 function DesktopCart(): React.ReactElement {
   const [top, setTop] = React.useState(40);

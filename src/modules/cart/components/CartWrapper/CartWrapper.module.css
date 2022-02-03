@@ -31,6 +31,7 @@
     display: flex;
     font-size: 12px;
     margin-top: 10px;
+    align-items: center;
   }
   .summary__items, .summary__total, .summary__total_count {
     flex: 1;

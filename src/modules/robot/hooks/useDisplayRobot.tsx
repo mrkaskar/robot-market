@@ -1,9 +1,9 @@
 import flatten from 'helpers/flattenObj';
 import React from 'react';
 import { IRobot } from 'types/robot';
+import useRobot from 'modules/robot/hooks/useRobot';
+import useFilters from 'modules/robot/hooks/useFilter';
 import { IFormattedRobot, IRobotData } from '../components/RobotContext/RobotContextProvider';
-import useRobot from './useRobot';
-import useFilters from './useFilter';
 
 interface IDisplayRobot {
   displayRobots: IRobot[]

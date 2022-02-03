@@ -1,5 +1,5 @@
 import React from 'react';
-import useScreensize, { Size } from './useScreensize';
+import useScreensize, { Size } from 'hooks/useScreensize';
 
 function useMobileSize(): { isMobile: boolean } {
   const [isMobile, setIsMobile] = React.useState(false);

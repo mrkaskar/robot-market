@@ -1,5 +1,5 @@
 import React from 'react';
-import useAsync, { IAsync } from './useAsync';
+import useAsync, { IAsync } from 'hooks/useAsync';
 
 interface IApi<T> {
   apiFun: () => Promise<T>

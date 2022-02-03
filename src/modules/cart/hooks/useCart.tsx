@@ -2,7 +2,7 @@
 import { useAtom } from 'jotai';
 import useRobot from 'modules/robot/hooks/useRobot';
 import React from 'react';
-import cartState, { ICart } from '../state/cartState';
+import cartState, { ICart } from 'modules/cart/state/cartState';
 
 interface IUseCart {
   carts: ICart

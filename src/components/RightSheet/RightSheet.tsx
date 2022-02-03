@@ -1,7 +1,7 @@
 import { SheetContext } from 'context/SheetProvider';
 import React from 'react';
-import styles from './RightSheet.module.css';
-import { buildGesture, cleanGesture, Gesture } from '../../helpers/gestureDetector';
+import styles from 'components/RightSheet/RightSheet.module.css';
+import { buildGesture, cleanGesture, Gesture } from 'helpers/gestureDetector';
 
 interface IRightSheet {
   children: React.ReactElement

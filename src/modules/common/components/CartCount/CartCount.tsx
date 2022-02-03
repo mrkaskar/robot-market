@@ -1,7 +1,7 @@
 import useCart from 'modules/cart/hooks/useCart';
 import React from 'react';
-import { ReactComponent as Cart } from './assets/cart.svg';
-import styles from './CartCount.module.css';
+import { ReactComponent as Cart } from 'modules/common/components/CartCount/assets/cart.svg';
+import styles from 'modules/common/components/CartCount/CartCount.module.css';
 
 interface ICartCount {
   onClick: () => void;

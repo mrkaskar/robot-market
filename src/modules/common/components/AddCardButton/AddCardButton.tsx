@@ -1,8 +1,8 @@
 import colors from 'global/colors/colors';
 import React from 'react';
-import styles from './AddCartButton.module.css';
-import { ReactComponent as AddCart } from './assets/addcart.svg';
-import { ReactComponent as DisabledCart } from './assets/disabled_addcart.svg';
+import styles from 'modules/common/components/AddCardButton/AddCartButton.module.css';
+import { ReactComponent as AddCart } from 'modules/common/components/AddCardButton/assets/addcart.svg';
+import { ReactComponent as DisabledCart } from 'modules/common/components/AddCardButton/assets/disabled_addcart.svg';
 
 interface IAddCartButton {
   onClick: () => void

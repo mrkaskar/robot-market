@@ -4,7 +4,7 @@ import DesktopCart from 'modules/cart/components/DesktopCart/DesktopCart';
 import RobotFilters from 'modules/robot/components/RobotFilters/RobotFilters';
 import RobotGrid from 'modules/robot/components/RobotGrid/RobotGrid';
 import React from 'react';
-import styles from './Home.module.css';
+import styles from 'pages/Home.module.css';
 
 function Home(): React.ReactElement {
   const { isMobile } = useMobileSize();
