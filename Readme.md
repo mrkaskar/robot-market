@@ -24,7 +24,8 @@ https://robot-market.vercel.app
 * Easy to filter material
 
 ### Things to improve 
-* For multiple lists, infinite loading should be used with the help of server
+* For multiple lists, infinite loading could be used if server returns chunks of data
+* For client lists, lazy loading lists such as react-window could be used
 * Need more accessibility of elements for testing purpose 
 ### Screenshots
 
