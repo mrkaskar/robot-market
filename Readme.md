@@ -1,4 +1,7 @@
-# Robot Market
+# Robot Market (duration - 4 days)
+## Technology
+* UX/UI by Figma
+* React/Typescript
 ## Deployed at 
 https://robot-market.vercel.app
 ### Folder Structure in src
