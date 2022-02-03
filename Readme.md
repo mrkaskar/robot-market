@@ -2,6 +2,7 @@
 ## Technology
 * UX/UI by Figma
 * React/Typescript
+
 Implementation duration - 4 days 
 ## Deployed at 
 https://robot-market.vercel.app
