@@ -5,6 +5,7 @@ import dateFormatter from 'helpers/dateFormatter';
 import AddCardButton from 'modules/common/components/AddCardButton/AddCardButton';
 import { IRobot } from 'types/robot';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import useCart from 'modules/cart/hooks/useCart';
 import styles from './RobotCard.module.css';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -18,6 +19,7 @@ function RobotCard({
   material,
 }: IRobot): React.ReactElement {
   const { text1, text2 } = colors;
+  const { addToCart } = useCart();
 
   return (
     <div className={styles.robot_card}>
@@ -75,7 +77,9 @@ function RobotCard({
               {dateFormatter(createdAt)}
 
             </p>
-            <AddCardButton />
+            <AddCardButton
+              onClick={() => addToCart({ name, img: image, price })}
+            />
           </div>
         </div>
       </div>

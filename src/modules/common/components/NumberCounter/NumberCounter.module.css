@@ -1,0 +1,26 @@
+.number_wrapper {
+  display: inline-flex;
+  width: 50px;
+}
+
+.increase, .decrease {
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(137.39deg, #34AAFF -15.07%, #97D3FF 145.21%);
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;  
+}
+
+.increase, .decrease:hover {
+ cursor: pointer; 
+}
+
+.number {
+  font-size: 12px;  
+  flex: 1;
+  text-align: center;
+}

@@ -33,7 +33,7 @@ function RightSheet({
       ref={sheetRef}
       className={styles.rightsheet}
       style={{
-        right: rightSheet ? '-10px' : '-300px',
+        right: rightSheet ? '-10px' : '-310px',
       }}
       aria-hidden
       onClick={(e) => e.stopPropagation()}

@@ -3,10 +3,18 @@ import React from 'react';
 import styles from './AddCartButton.module.css';
 import { ReactComponent as AddCart } from './assets/addcart.svg';
 
-function AddCardButton(): React.ReactElement {
+interface IAddCartButton {
+  onClick: () => void
+}
+
+function AddCardButton({ onClick }: IAddCartButton): React.ReactElement {
   const { primary } = colors;
   return (
-    <button type="button" className={`${styles.cart_button} ${styles.active_button}`}>
+    <button
+      onClick={onClick}
+      type="button"
+      className={`${styles.cart_button} ${styles.active_button}`}
+    >
       <AddCart className={styles.add_cart_icon} />
       <span style={{ color: primary }}>
         Add to Cart

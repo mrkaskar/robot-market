@@ -5,8 +5,9 @@ import RightSheet from 'components/RightSheet/RightSheet';
 import { SheetContext } from 'context/SheetProvider';
 import Home from 'pages/Home';
 import RobotContextProvider from 'modules/robot/components/RobotContext/RobotContextProvider';
-import Cart from 'modules/cart/Cart';
 import CartCount from 'modules/common/components/CartCount/CartCount';
+import NumberCounter from 'modules/common/components/NumberCounter/NumberCounter';
+import CartWrapper from 'modules/cart/components/CartWrapper/CartWrapper';
 
 function App(): React.ReactElement {
   const media = useSize();
@@ -23,13 +24,13 @@ function App(): React.ReactElement {
         if (sheet.rightSheet) toggleRightSheet();
       }}
       style={{
-        paddingLeft: isMobile ? '20px' : '50px',
+        paddingLeft: isMobile ? '20px' : '30px',
       }}
     >
       <RobotContextProvider>
         <Home />
         <RightSheet>
-          <Cart />
+          <CartWrapper />
         </RightSheet>
 
         {
