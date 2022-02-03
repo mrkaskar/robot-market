@@ -38,7 +38,7 @@ function Cart(): React.ReactElement {
             <span
               className={styles.no_item}
             >
-              There is no item in cart yet! Please add an item
+              There is no item in cart yet! Please add an item.
             </span>
           )
           : (
