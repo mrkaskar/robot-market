@@ -15,7 +15,7 @@ function Home(): React.ReactElement {
       <RobotGrid />
       {/* for padding bottom */}
       <div style={{
-        height: '300px',
+        height: '50px',
       }}
       />
       {

@@ -11,22 +11,22 @@ function RightSheet({
 }: IRightSheet): React.ReactElement {
   const { sheet: { rightSheet }, updateSheet } = React.useContext(SheetContext);
   const sheetRef = React.useRef<HTMLDivElement>(null);
-  function acceptGesture(gest: Gesture): void {
+
+  const acceptGesture = React.useCallback((gest: Gesture): void => {
     if (gest === Gesture.RIGHT) {
       if (updateSheet) { updateSheet('rightSheet', false); }
     }
-  }
+  }, [updateSheet]);
+
   React.useEffect(() => {
     const sheetDiv = sheetRef.current;
     if (sheetDiv) {
       buildGesture(sheetDiv, acceptGesture);
     }
     return () => {
-      if (sheetDiv) {
-        cleanGesture(sheetDiv, acceptGesture);
-      }
+      if (sheetDiv) { cleanGesture(sheetDiv, acceptGesture); }
     };
-  }, [sheetRef]);
+  }, []);
 
   return (
     <div
