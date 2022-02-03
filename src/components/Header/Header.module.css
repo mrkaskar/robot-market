@@ -1,8 +1,11 @@
 .header {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 80px;
 }
 .header__title {
   margin-left: 10px;
+}
+.logo {
+  margin-bottom: 14px;
 }
