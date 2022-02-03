@@ -22,7 +22,7 @@ function Cart(): React.ReactElement {
       >
         <span style={{
           marginRight: '10px',
-          marginBottom: `${isMobile && '20px'}`,
+          marginBottom: `${isMobile && '5px'}`,
         }}
         >
           Your robots in Cart
