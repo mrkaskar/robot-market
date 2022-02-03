@@ -37,6 +37,10 @@
     flex: 1;
   }
   
+  .summary__items{
+    margin-left: 2px;
+  }
+  
   .summary__total {
     text-align: center;
   }
