@@ -46,7 +46,9 @@ https://robot-market.vercel.app
 
 ***Desktop View***
 ![alt Desktop](https://i.ibb.co/HDfxgft/ss1-1.png)
+
 ***Mobile View 1***
 ![alt Mobile](https://i.ibb.co/7RTmKK8/photo-2022-02-04-02-01-05.jpg)
+
 ***Mobile View 2***
 ![alt Mobile](https://i.ibb.co/kMJW5KY/photo-2022-02-04-02-01-10.jpg)
