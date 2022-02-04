@@ -8,15 +8,25 @@ Implementation duration - 4 days
 https://robot-market.vercel.app
 ### Folder Structure in src
 **assets** - Application level assets 
+
 **components** - Application level components 
+
 **config** - Configuration of the application (such as backend routes)
+
 **context** - Application level context providers 
+
 **global** - Application level css and constants 
+
 **helpers** - helpers functions for the project 
-**hooks** ->Application level custom hooks
+
+**hooks** - Application level custom hooks
+
 **modules** - Sub-application for specific features 
+
 **pages** - Application screens 
+
 **types** - Collection of variable types 
+
 ### State management 
 * Not frequently updated data such as robots, is provided via React Context.
 * Frequently updated data, such as filters and carts are provided by light weight Jotai state library. Jotai can be found at https://github.com/pmndrs/jotai
