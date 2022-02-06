@@ -1,4 +1,7 @@
 # Robot Market 
+***Please test robot image api if robot images are not appearing***
+https://robohash.org/thisissomename
+
 ## Technology
 * UX/UI by Figma
 * React/Typescript
